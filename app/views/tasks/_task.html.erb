@@ -1,0 +1,9 @@
+<%= form_for task, remote: true do |f| %>
+    <%= f.check_box :complete %>
+
+    <%=  task.name %>
+    <%# f.submit "Update"  %>
+    <%#	 link_to "Edit", '#', :class => 'icon-large icon-edit',:id => 'edit'  %>
+    <%= link_to "Delete", task, method: :delete, :class => 'icon-large icon-trash del-link', remote: true  %>
+
+<% end %>
