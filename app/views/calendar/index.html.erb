@@ -8,10 +8,10 @@
 
 <!-- these are needed for the calendar. -->
 <%= javascript_include_tag "jquery-ui-1.8.11.custom.min.js" %>
-
+    <%= stylesheet_link_tag "calendar" %>
 
 
 <% end %>
-<%= link_to "new event", new_event_path %>
+<%= link_to " Add Event", new_event_path, :remote => true, :id => 'new_event', :class => 'icon-large icon-plus-sign' %>
 
 <div id='calendar'></div>

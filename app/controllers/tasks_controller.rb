@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   include ApplicationHelper
+ layout  'profile'
   def index
     @user = User.find_by_username!(params[:username])
     sleep 1

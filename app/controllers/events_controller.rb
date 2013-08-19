@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   # this to be starts_at and ends_at to match rails conventions.
   # I'll eventually do that to make the demo a little cleaner.
   @events = Event.scoped
+
   @events = @events.after(params['start']) if (params['start'])
   @events = @events.before(params['end']) if (params['end'])
 
@@ -33,11 +34,14 @@ end
 # GET /events/new.xml
 def new
   @event = Event.new
+ # @event.ends_at.strftime('%b-%d-%Y %l:%M:%S')
+ # @event.starts_at.strftime('%b-%d-%Y %l:%M:%S')
 
-  respond_to do |format|
-    format.html # new.html.erb
-    format.xml  { render :xml => @event }
-  end
+#  respond_to do |format|
+ #   format.html # new.html.erb
+ #   format.xml  { render :xml => @event }
+  
+#  end
 end
 
 # GET /events/1/edit
@@ -52,7 +56,7 @@ def create
 
   respond_to do |format|
     if @event.save
-      format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
+      format.html { redirect_to :controller => :calendar, :action => :index }
       format.xml  { render :xml => @event, :status => :created, :location => @event }
     else
       format.html { render :action => "new" }

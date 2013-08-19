@@ -1,4 +1,12 @@
-Agendar::Application.routes.draw do
+Agendar::Application.routes.draw do   resources :appt_calendars do
+ 		member do
+ 			post 'temp'
+ 		end
+ 	end
+
+ 	resources :jqcalendars
+
+
   get "calendar/index"
 
   resources :events

@@ -5221,7 +5221,7 @@ $(document).ready(function() {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
-        defaultView: 'month',
+        defaultView: 'agendaWeek',
         height: 500,
         slotMinutes: 15,
         
