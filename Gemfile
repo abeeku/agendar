@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
   gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'bootstrap-timepicker-rails'
+gem 'jquery-timepicker-rails'
 gem 'jquery-ui-rails'
 gem 'growl'
 group :development do
